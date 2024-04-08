@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit the existing view -->
+        <record id="view_acs_ophthalmology_evaluation_form_inherit" model="ir.ui.view">
+            <field name="name">acs.ophthalmology.evaluation.form.inherit</field>
+            <field name="model">acs.ophthalmology.evaluation</field>
+            <field name="inherit_id" ref="acs_hms_ophthalmology.view_acs_ophthalmology_evaluation_form"/>
+            <field name="arch" type="xml">
+                
+                <!-- <xpath expr="//form" position="inside">
+                    <button name="action_cancel" states="in_progress" string="Cancel" type="object" class="oe_highlight"/>
+                </xpath> -->
+                <xpath expr="//page[@name='contact_lens']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', '=', 'draft')]}</attribute>
+                </xpath>
+                <!-- <xpath expr="//page[@name='contact_lens']" position="before">
+                    <page name="eye_speciality" attrs="{'readonly': [('state', '==', 'draft')]}">
+                        <tbody>
+                                    <tr>
+                                        <th>Ac. Cells</th>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Flare</th>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>KP's</th>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Hypopyon</th>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vt. Cells</th>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                        <td>
+                                            <field name="spec_ac_cells_re" attrs="{'readonly': [('state', '==', 'draft')]}"/>                                        </td>
+                                    </tr>
+                                </tbody>
+                        
+                    </page>
+
+                </xpath> -->
+            </field>
+        </record>
+    </data>
+</odoo>

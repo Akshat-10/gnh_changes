@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_physician_form_add_inherit" model="ir.ui.view">
+        <field name="name">hms.physician.form.inherit</field>
+        <field name="model">hms.physician</field>
+        <field name="inherit_id" ref="acs_hms_base.view_physician_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_primary_surgeon']" position="after">
+                <field name="validity"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

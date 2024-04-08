@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cancel_reason,cancel.reason,model_cancel_reason,base.group_erp_manager,1,1,1,1
+access_cancel_reason_wizard,cancel.reason.wizard,model_cancel_reason_wizard,base.group_erp_manager,1,1,1,1
+
+access_cancel_reason,cancel.reason,model_cancel_reason,sltech_ophthalmology.group_ophthalmology_doctor,1,1,1,1
+access_cancel_reason_wizard,cancel.reason.wizard,model_cancel_reason_wizard,sltech_ophthalmology.group_ophthalmology_doctor,1,1,1,1
+
+access_cancel_reason,cancel.reason,model_cancel_reason,acs_hms_ophthalmology.group_hms_ophthalmology,1,1,1,1
+access_cancel_reason_wizard,cancel.reason.wizard,model_cancel_reason_wizard,acs_hms_ophthalmology.group_hms_ophthalmology,1,1,1,1
+
+
+

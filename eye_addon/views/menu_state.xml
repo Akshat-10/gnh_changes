@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Menu Item for Draft State -->
+        <record id="menu_acs_ophthalmology_draft" model="ir.ui.menu">
+            <field name="name">Draft Ophthalmology Evaluations</field>
+            <field name="action" ref="your_module_name.action_acs_ophthalmology_draft"/>
+            <field name="parent_id" ref="your_module_name.menu_acs_ophthalmology_root"/>
+            <field name="sequence" type="int">10</field>
+        </record>
+        
+        <!-- Menu Item for In Progress State -->
+        <record id="menu_acs_ophthalmology_in_progress" model="ir.ui.menu">
+            <field name="name">In Progress Ophthalmology Evaluations</field>
+            <field name="action" ref="your_module_name.action_acs_ophthalmology_in_progress"/>
+            <field name="parent_id" ref="your_module_name.menu_acs_ophthalmology_root"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+        
+        <!-- Menu Item for Done State -->
+        <record id="menu_acs_ophthalmology_done" model="ir.ui.menu">
+            <field name="name">Done Ophthalmology Evaluations</field>
+            <field name="action" ref="your_module_name.action_acs_ophthalmology_done"/>
+            <field name="parent_id" ref="your_module_name.menu_acs_ophthalmology_root"/>
+            <field name="sequence" type="int">30</field>
+        </record>
+        
+    </data>
+</odoo>

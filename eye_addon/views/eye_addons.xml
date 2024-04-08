@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="diagram_ophthalmology_inherit" model="ir.ui.view">
+            <field name="name">acs.ophthalmology.evaluation.inherit</field>
+            <field name="model">acs.ophthalmology.evaluation</field>
+            <field name="inherit_id" ref="acs_hms_ophthalmology.view_acs_ophthalmology_evaluation_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//header" position="inside">
+                    <!-- <button name="action_cancel" string="Cancel" states="confirm" type="object" class="btn-primary"/> -->
+                    <button name="%(action_cancel_reason_wizard)d" string="Cancel" states="confirm" type="action" class="btn-primary"/> 
+                </xpath>
+                <xpath expr="//header/button[@name='submit_refractive_readings_to_doctor_optometry']" position="replace">
+                    <button name="submit_refractive_readings_to_doctor_optometry" states="in_progress" string="Submit" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//header/button[@name='action_done']" position="replace">
+                    <button name="action_done" states="confirm" string="Done" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible">draft,in_progress,confirm</attribute>
+                </xpath>
+                
+
+                <xpath expr="//button[@name='action_done']" position="attributes">
+                    <attribute name="groups">sltech_ophthalmology.group_ophthalmology_doctor</attribute>
+                </xpath>
+                <xpath expr="//div[@class='oe_title']" position="before">
+                    <!-- <field name="name" position="before"/> -->
+                    <field name="image" widget='image' class="oe_avatar"/>
+                </xpath>
+                <!-- <xpath expr="//form" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                    <attribute name="attrs">{'readonly': [('state', '=', 'cancel')]}</attribute>
+                </xpath> -->
+                <!-- <xpath expr="//page[@name='ophthalmic_drawing']" position="inside">
+                    <group>
+                            <group>
+                                <field name="eye_drawing_le_re2" widget="image"/>
+                            </group>
+                    </group>
+
+                        <div>
+                            <a class="btn btn-primary" href="#" id='custom_open_draw_canvas' role="button">
+                                Fundus 2
+                            </a>
+                        </div> 
+                        <div class="form-group" id="custom_draw_image" style="display:none;">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <canvas id="sig-canvas1" width="950" height="600">
+                                                Get a better browser, bro.
+                                            </canvas>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <a class="btn btn-primary" href="#" id="sig-submitBtn1" role="button">
+                                                    Submit
+                                                </a>
+                                                <a class="btn btn-default" href="#" id="sig-clearBtn1" role="button">
+                                                    Clear
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="hidden" id="sig-dataUrl1"
+                                                       class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="" id="sig-image-div"
+                                                 style="border: 1px solid #222;margin: 0 0 0 15px;display:none;">
+                                                <img id="sig-image1" src=""
+                                                     alt="Your signature will go here!"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                
+                </xpath> -->
+            </field>
+        </record>
+    </data>
+</odoo>

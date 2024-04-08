@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hms_appointment_addon_form_view" model="ir.ui.view">
+            <field name="name">hms.appointment.form</field>
+            <field name="model">hms.appointment</field>
+            <field name="inherit_id" ref="acs_hms.view_hms_appointment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='print_report']" position="after">
+                    <button name="action_direct_to_doctor" states="done" string="Direct to Doctor" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//field[@name='patient_id']" position="after">
+                    <field name="select_option"/>
+                    <field name="birthday" attrs="{'invisible': [('select_option', '!=', 'dob')]}"/>
+                    
+                    <field name="year_of_birth" attrs="{'invisible': [('select_option', '!=', 'yob')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='follow_date']" position="after">
+                    <field name="validity" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

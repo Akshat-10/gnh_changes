@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action For Draft State -->
+        <record id="action_custom_ophthalmology_draft" model="ir.actions.act_window">
+            <field name="name">Ophthalmology Evaluations (Draft)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">acs.ophthalmology.evaluation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'draft')]</field>
+        </record>
+
+        <!-- Action for In Progress State -->
+        <record id="action_acs_ophthalmology_in_progress" model="ir.actions.act_window">
+            <field name="name">Ophthalmology Evaluations (In Progress)</field>
+            <field name="res_model">acs.ophthalmology.evaluation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'in_progress')]</field>
+        </record>
+        
+        <!-- Action for Done State -->
+        <record id="action_acs_ophthalmology_done" model="ir.actions.act_window">
+            <field name="name">Ophthalmology Evaluations (Done)</field>
+            <field name="res_model">acs.ophthalmology.evaluation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'done')]</field>
+        </record>
+
+        <record id="action_acs_ophthalmology_confirm" model="ir.actions.act_window">
+            <field name="name">Ophthalmology Evaluations (Confirm)</field>
+            <field name="res_model">acs.ophthalmology.evaluation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'confirm')]</field>
+        </record>
+
+        <record id="action_acs_ophthalmology_cancel" model="ir.actions.act_window">
+            <field name="name">Ophthalmology Evaluations (Cancel)</field>
+            <field name="res_model">acs.ophthalmology.evaluation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'cancel')]</field>
+        </record>
+
+        <menuitem name="Ophthalmology Draft" id="menu_acs_ophthalmology_evaluations_draft" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_custom_ophthalmology_draft" sequence="30"/>
+
+        <menuitem name="Ophthalmology In Progress" id="menu_acs_ophthalmology_evaluations_in_progress" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_in_progress" sequence="40"/>
+        
+        <menuitem name="Ophthalmology Done" id="menu_acs_ophthalmology_evaluations_done" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_done" sequence="50"/>
+
+        <menuitem name="Ophthalmology Confirm" id="menu_acs_ophthalmology_evaluations_confirm" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_confirm" sequence="60"/>
+
+        <menuitem name="Ophthalmology Cancel" id="menu_acs_ophthalmology_evaluations_cancel" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_cancel" sequence="70"/>
+
+    </data>
+</odoo>
