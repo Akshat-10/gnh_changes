@@ -7,9 +7,12 @@
             <field name="model">hms.patient</field>
             <field name="inherit_id" ref="acs_hms_base.view_patient_form"/>
             <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='birthday']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('select_option', '!=', 'dob')]}</attribute>
+                </xpath>
                 <xpath expr="//field[@name='birthday']" position="before">
                     <field name="select_option"/>
-                    <field name="birthday" attrs="{'invisible': [('select_option', '!=', 'dob')]}"/>
                     <field name="year_of_birth" attrs="{'invisible': [('select_option', '!=', 'yob')]}"/>
                 </xpath>
             </field>

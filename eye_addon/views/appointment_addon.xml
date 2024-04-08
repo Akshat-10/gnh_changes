@@ -9,9 +9,15 @@
                 <xpath expr="//header/button[@name='print_report']" position="after">
                     <button name="action_direct_to_doctor" states="done" string="Direct to Doctor" type="object" class="oe_highlight"/>
                 </xpath>
+
+
+                <xpath expr="//field[@name='birthday']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('select_option', '!=', 'dob')]}</attribute>
+                </xpath>
+
+
                 <xpath expr="//field[@name='patient_id']" position="after">
                     <field name="select_option"/>
-                    <field name="birthday" attrs="{'invisible': [('select_option', '!=', 'dob')]}"/>
                     
                     <field name="year_of_birth" attrs="{'invisible': [('select_option', '!=', 'yob')]}"/>
                 </xpath>
