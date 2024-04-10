@@ -14,8 +14,11 @@
             
             <!-- <xpath expr="//field[@name='discount_type']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='discount']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
-            <xpath expr="//field[@name='discount']" position="attributes">
+            <xpath expr="//field[@name='discount'][1]" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath> -->
 

@@ -16,8 +16,8 @@ class SltechOphthalmology(models.Model):
         ('readonly', True)]}
     
     state = fields.Selection([('draft', 'Draft'),
-        ('in_progress', 'In progress'),
-        ('confirm', 'Confirm'),
+        ('in_progress', 'Under Evaluation'),
+        ('confirm', 'Submitted'),
         ('done', 'Done'),
         ('cancel', 'Cancelled'),
         ], 'Status', default="draft", readonly=True, states=READONLY_STATES)
@@ -34,6 +34,11 @@ class SltechOphthalmology(models.Model):
     def submit_refractive_readings_to_doctor_optometry(self):
         res = super(SltechOphthalmology, self).submit_refractive_readings_to_doctor_optometry()
         self.state = 'confirm'
+
+    def action_direct_to_doctor(self):
+        self.action_inprogress()
+        self.submit_refractive_readings_to_doctor_optometry()
+        # self.state = 'confirm'
 
     # # @api.model
     # # def create(self, vals):

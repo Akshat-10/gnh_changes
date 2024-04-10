@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="optam_store_user_category">
+            <field name="name">Optam Store User Type</field>
+            <field name="sequence">0</field>
+        </record>
+
+        <record model="res.groups" id="group_optam_store_user">
+            <field name="name">Optam Store User</field>
+            <field name="category_id" ref="optam_store_user_category"/>
+        </record>
+    </data>
+</odoo>

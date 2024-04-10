@@ -42,15 +42,15 @@
             <field name="domain">[('state', '=', 'cancel')]</field>
         </record>
 
-        <menuitem name="Ophthalmology Draft" id="menu_acs_ophthalmology_evaluations_draft" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_custom_ophthalmology_draft" sequence="30"/>
+        <menuitem name="Ophthalmology Draft" id="menu_acs_ophthalmology_evaluations_draft" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_custom_ophthalmology_draft" sequence="30" groups="sltech_ophthalmology.group_ophthalmology_doctor,base.group_erp_manager" />
 
-        <menuitem name="Ophthalmology In Progress" id="menu_acs_ophthalmology_evaluations_in_progress" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_in_progress" sequence="40"/>
+        <menuitem name="Ophthalmology In Progress" id="menu_acs_ophthalmology_evaluations_in_progress" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_in_progress" sequence="40" groups="sltech_ophthalmology.group_ophthalmology_doctor,base.group_erp_manager" />
         
-        <menuitem name="Ophthalmology Done" id="menu_acs_ophthalmology_evaluations_done" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_done" sequence="50"/>
+        <menuitem name="Ophthalmology Done" id="menu_acs_ophthalmology_evaluations_done" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_done" sequence="50" groups="sltech_ophthalmology.group_ophthalmology_doctor,base.group_erp_manager" />
 
-        <menuitem name="Ophthalmology Confirm" id="menu_acs_ophthalmology_evaluations_confirm" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_confirm" sequence="60"/>
+        <menuitem name="Ophthalmology Confirm" id="menu_acs_ophthalmology_evaluations_confirm" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_confirm" sequence="60" groups="sltech_ophthalmology.group_ophthalmology_doctor,base.group_erp_manager" />
 
-        <menuitem name="Ophthalmology Cancel" id="menu_acs_ophthalmology_evaluations_cancel" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_cancel" sequence="70"/>
+        <menuitem name="Ophthalmology Cancel" id="menu_acs_ophthalmology_evaluations_cancel" parent="acs_hms_ophthalmology.menu_acs_main_ophthalmology" action="action_acs_ophthalmology_cancel" sequence="70" groups="sltech_ophthalmology.group_ophthalmology_doctor,base.group_erp_manager" />
 
     </data>
 </odoo>

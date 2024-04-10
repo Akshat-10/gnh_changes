@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_optum_store_prescription">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <div style="width: 100%;
+                                    max-width: 353px;
+                                    height: 100%;
+                                    max-height: 470px;
+                                    margin: auto;
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    padding: 15px;
+                                    line-height: 25px;
+                                    font-size: 10px;
+                                    ">
+                        
+                            <div style="display: flex;justify-content: space-between;" >
+                                <div>
+                                    <img src="pic1.png" alt="img" style="width: 106px; height: 52px;" />
+                                </div>
+                            </div>
+                            <div>
+                                <p>Gobind Nursing Home</p>
+                                <span>Opp. Jat College, Hisar (Haryana)-125001</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; line-height: 19px;" >
+                                <div style="width: 151px;">Pt: <span t-field="doc.patient_id.name"></span></div>
+                                <div style="width: 151px;">UHID No: <span t-field="doc.patient_id.code"></span></div>
+                                <div style="width: 151px;">Date: <span t-field="doc.date"></span></div>
+                                
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <div style="width: 49%;">Dr. : <span t-field="doc.physician_id.name"></span></div>
+                                <div style="width: 41%;">Phone No.: <span t-field="doc.patient_id.phone"></span></div>
+                            </div>
+                            <div>
+                                <table style="border-collapse: collapse;
+                                                border: 2px solid black;
+                                                margin: 26px;   width: 54%;">
+                                    <tr>
+                                        <th style="border: 2px solid black;" rowspan="2"></th>
+                                        <th style="border: 2px solid black;" colspan="4">Right</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="border: 2px solid black;">SPH</th>
+                                        <th style="border: 2px solid black;">CYL</th>
+                                        <th style="border: 2px solid black;">AXIX</th>
+                                        <th style="border: 2px solid black;">V/N</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 2px solid black;">DV</td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.re8"></span></td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.re9"></span></td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.re10"></span></td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.sltech_va_with_cl_re"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 2px solid black;">NV</td>
+                                        <td style="border: 2px solid black;">1</td>
+                                        <td style="border: 2px solid black;">2</td>
+                                        <td style="border: 2px solid black;">3</td>
+                                        <td style="border: 2px solid black;">4</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div>
+                                <table style="border-collapse: collapse;
+                                                border: 2px solid black;
+                                                margin: 26px;   width: 54%;">
+                                    <tr>
+                                        <th style="border: 2px solid black;" rowspan="2"></th>
+                                        <th style="border: 2px solid black;" colspan="4">Left</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="border: 2px solid black;">SPH</th>
+                                        <th style="border: 2px solid black;">CYL</th>
+                                        <th style="border: 2px solid black;">AXIX</th>
+                                        <th style="border: 2px solid black;">V/N</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 2px solid black;">DV</td>
+                                        <td style="border: 2px solid black;">2</td>
+                                        <td style="border: 2px solid black;">3</td>
+                                        <td style="border: 2px solid black;">4</td>
+                                        <td style="border: 2px solid black;">5</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 2px solid black;">NV</td>
+                                        <td style="border: 2px solid black;">7</td>
+                                        <td style="border: 2px solid black;">8</td>
+                                        <td style="border: 2px solid black;">9</td>
+                                        <td style="border: 2px solid black;">10</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="optum_store_report" model="ir.actions.report">
+            <field name="name">Optum Store Prescription</field>
+            <field name="model">acs.ophthalmology.evaluation</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">eye_addon.report_optum_store_prescription</field>
+            <field name="report_file">eye_addon.report_optum_store_prescription</field>
+            <field name="print_report_name">(object.name or 'Optum Store Prescription').replace('/','_')</field>
+            <field name="binding_model_id" ref="acs_hms_ophthalmology.model_acs_ophthalmology_evaluation"/>
+            <field name="binding_type">report</field>
+            <field name="groups_id" eval="[(4, ref('eye_addon.group_optam_store_user'))]"/>
+        </record>
+
+    </data>
+</odoo>

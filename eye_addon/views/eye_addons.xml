@@ -8,7 +8,6 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//header" position="inside">
-                    <!-- <button name="action_cancel" string="Cancel" states="confirm" type="object" class="btn-primary"/> -->
                     <button name="%(action_cancel_reason_wizard)d" string="Cancel" states="confirm" type="action" class="btn-primary"/> 
                 </xpath>
                 <xpath expr="//header/button[@name='submit_refractive_readings_to_doctor_optometry']" position="replace">
@@ -16,6 +15,13 @@
                 </xpath>
                 <xpath expr="//header/button[@name='action_done']" position="replace">
                     <button name="action_done" states="confirm" string="Done" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//header/button[@name='action_inprogress']" position="after">
+                    <button name="action_direct_to_doctor" string="Direct to Doctor" states="draft" type="object" class="oe_highlight"
+                            groups="sltech_ophthalmology.group_ophthalmology_lab_user, sltech_ophthalmology.group_ophthalmology_doctor, base.group_erp_manager"/>
+                </xpath>
+                <xpath expr="//header/button[@name='action_inprogress']" position="attributes">
+                    <attribute name="groups">sltech_ophthalmology.group_ophthalmology_lab_user, base.group_erp_manager</attribute>
                 </xpath>
                 <xpath expr="//field[@name='state']" position="attributes">
                     <attribute name="statusbar_visible">draft,in_progress,confirm</attribute>

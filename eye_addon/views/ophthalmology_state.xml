@@ -11,7 +11,7 @@
                 <!-- <xpath expr="//form" position="inside">
                     <button name="action_cancel" states="in_progress" string="Cancel" type="object" class="oe_highlight"/>
                 </xpath> -->
-                <!-- <xpath expr="//page[@name='contact_lens']" position="attributes">
+                <!-- <xpath expr="//page[@name='ophthalmic_history']" position="attributes">
                     <attribute name="attrs">{'readonly': [('state', '=', 'draft')]}</attribute>
                 </xpath> -->
                 <!-- <xpath expr="//page[@name='contact_lens']" position="before">
