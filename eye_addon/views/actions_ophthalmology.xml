@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+
         <!-- Action For Draft State -->
         <record id="action_custom_ophthalmology_draft" model="ir.actions.act_window">
             <field name="name">Ophthalmology Evaluations (Draft)</field>

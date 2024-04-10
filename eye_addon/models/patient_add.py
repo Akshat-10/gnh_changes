@@ -1,6 +1,6 @@
 from odoo import api, fields, models, _
 from datetime import date, datetime, timedelta
-from dateutil.relativedelta import relativedelta
+# from dateutil.relativedelta import relativedelta
 
 
 class HmsPatient(models.Model):
@@ -11,15 +11,20 @@ class HmsPatient(models.Model):
         ('yob', 'Year of Birth'),
     ], string='Select')
 
-    
-    year_of_birth = fields.Integer(string='Year of Birth')
+    year_of_birth = fields.Char(string='Year of Birth')
+
 
     @api.onchange('year_of_birth')
     def _onchange_year_of_birth(self):
-        for patient in self:
-            if patient.year_of_birth:
-                current_year = date.today().year
-                age = current_year - patient.year_of_birth
-                patient.age = str(age) + ' Years'
+        for appointment in self:
+            if appointment.year_of_birth:
+                try:
+                    birth_year_int = int(appointment.year_of_birth)
+                    current_year = fields.Date.today().year
+                    age = current_year - birth_year_int
+                    appointment.age = str(age) + " Years"
+                except ValueError:
+                    appointment.year_of_birth = False
+                    appointment.age = False
             else:
-                patient.age = False
+                appointment.age = False

@@ -28,7 +28,7 @@
         'views/appointment_addon.xml',
         'views/actions_ophthalmology.xml',
         'views/physician_view.xml',
-        'views/ophthalmology_state.xml',
+        # 'views/ophthalmology_state.xml',
         'views/record_rule.xml',
         'views/appointment_button_access.xml',
     ],

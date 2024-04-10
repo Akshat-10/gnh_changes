@@ -7,7 +7,8 @@
             <field name="inherit_id" ref="acs_hms.view_hms_appointment_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//header/button[@name='print_report']" position="after">
-                    <button name="action_direct_to_doctor" states="done" string="Direct to Doctor" type="object" class="oe_highlight"/>
+                    <button name="action_direct_to_doctor"  string="Direct to Doctor" type="object" class="oe_highlight" groups="acs_hms.group_hms_receptionist,base.group_erp_manager" 
+                        attrs="{'invisible': ['|', ('state','!=','done'),('ophthalmology_evaluation_count', '>', 0)]}" />
                 </xpath>
 
 
@@ -18,7 +19,6 @@
 
                 <xpath expr="//field[@name='patient_id']" position="after">
                     <field name="select_option"/>
-                    
                     <field name="year_of_birth" attrs="{'invisible': [('select_option', '!=', 'yob')]}"/>
                 </xpath>
                 <xpath expr="//field[@name='follow_date']" position="after">
