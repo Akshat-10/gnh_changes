@@ -21,7 +21,7 @@
                                     <img src="pic1.png" alt="img" style="width: 106px; height: 52px;" />
                                 </div>
                             </div>
-                            <div>
+                            <div style="border-bottom: 3px solid #000;">
                                 <p>Gobind Nursing Home</p>
                                 <span>Opp. Jat College, Hisar (Haryana)-125001</span>
                             </div>
@@ -117,6 +117,7 @@
             <field name="binding_type">report</field>
             <field name="groups_id" eval="[(4, ref('eye_addon.group_optam_store_user'))]"/>
         </record>
+
 
     </data>
 </odoo>

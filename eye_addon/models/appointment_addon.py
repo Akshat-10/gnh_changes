@@ -37,7 +37,7 @@ class AppointmentAddon(models.Model):
                     appointment.age = False
             else:
                 appointment.age = False
-
+    
 
     # def action_direct_to_doctor(self):
     #     self.ensure_one()
