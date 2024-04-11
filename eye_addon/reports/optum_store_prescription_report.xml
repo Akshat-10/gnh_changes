@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="optum_store_report_custom_paper_format" model="report.paperformat">
+            <field name="name">Optum  Store Custom Paper Format</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">100</field>
+            <field name="page_width">55</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">1</field>
+            <field name="margin_bottom">1</field>
+            <field name="margin_left">1</field>
+            <field name="margin_right">1</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">5</field>
+            <field name="dpi">90</field>
+        </record>
         <template id="report_optum_store_prescription">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
@@ -18,22 +33,26 @@
                         
                             <div style="display: flex;justify-content: space-between;" >
                                 <div>
-                                    <img src="pic1.png" alt="img" style="width: 106px; height: 52px;" />
+                                    <!-- <img src="pic1.png" alt="img" style="width: 106px; height: 52px;" /> -->
+                                    <img src="/eye_addon/static/description/gnh.png" alt="logo" style="width: 106px;height: 52px;"/>
                                 </div>
                             </div>
-                            <div style="border-bottom: 3px solid #000;">
-                                <p>Gobind Nursing Home</p>
-                                <span>Opp. Jat College, Hisar (Haryana)-125001</span>
+                            <div style="border-bottom: 3px solid #000; text-align: center;">
+                                <div style="margin: 0;">Gobind Nursing Home</div>
+                                <div style="margin: 0;">Opp. Jat College, Hisar (Haryana)-125001</div>
                             </div>
                             <div style="display: flex; justify-content: space-between; line-height: 19px;" >
-                                <div style="width: 151px;">Pt: <span t-field="doc.patient_id.name"></span></div>
-                                <div style="width: 151px;">UHID No: <span t-field="doc.patient_id.code"></span></div>
-                                <div style="width: 151px;">Date: <span t-field="doc.date"></span></div>
+                                <div style="width: 49%;">Pt: <span t-field="doc.patient_id.name"></span></div>
+                                <div style="width: 49%;">UHID No: <span t-field="doc.patient_id.code"></span></div>
+                                
+                            </div>
+                            <div style="display: flex; justify-content: space-between; line-height: 19px;" >
+                                <div style="width: 49%;">Date: <span t-field="doc.date" t-field-options='{"widget": "date"}'></span></div>
+                                <div style="width: 49%;">Dr. : <span t-field="doc.physician_id.name"></span></div>
                                 
                             </div>
                             <div style="display: flex; justify-content: space-between;">
-                                <div style="width: 49%;">Dr. : <span t-field="doc.physician_id.name"></span></div>
-                                <div style="width: 41%;">Phone No.: <span t-field="doc.patient_id.phone"></span></div>
+                                <div style="width: 49%;">Phone No.: <span t-field="doc.patient_id.phone"></span></div>
                             </div>
                             <div>
                                 <table style="border-collapse: collapse;
@@ -59,10 +78,10 @@
                                     </tr>
                                     <tr>
                                         <td style="border: 2px solid black;">NV</td>
-                                        <td style="border: 2px solid black;">1</td>
-                                        <td style="border: 2px solid black;">2</td>
-                                        <td style="border: 2px solid black;">3</td>
-                                        <td style="border: 2px solid black;">4</td>
+                                        <td style="border: 2px solid black;"></td>
+                                        <td style="border: 2px solid black;"></td>
+                                        <td style="border: 2px solid black;"></td>
+                                        <td style="border: 2px solid black;"></td>
                                     </tr>
                                 </table>
 
@@ -84,17 +103,17 @@
                                     </tr>
                                     <tr>
                                         <td style="border: 2px solid black;">DV</td>
-                                        <td style="border: 2px solid black;">2</td>
-                                        <td style="border: 2px solid black;">3</td>
-                                        <td style="border: 2px solid black;">4</td>
-                                        <td style="border: 2px solid black;">5</td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.le8"></span></td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.le9"></span></td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.le10"></span></td>
+                                        <td style="border: 2px solid black;"><span t-field="doc.sltech_va_with_cl_le"></span></td>
                                     </tr>
                                     <tr>
                                         <td style="border: 2px solid black;">NV</td>
-                                        <td style="border: 2px solid black;">7</td>
-                                        <td style="border: 2px solid black;">8</td>
-                                        <td style="border: 2px solid black;">9</td>
-                                        <td style="border: 2px solid black;">10</td>
+                                        <td style="border: 2px solid black;"></td>
+                                        <td style="border: 2px solid black;"></td>
+                                        <td style="border: 2px solid black;"></td>
+                                        <td style="border: 2px solid black;"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -116,6 +135,8 @@
             <field name="binding_model_id" ref="acs_hms_ophthalmology.model_acs_ophthalmology_evaluation"/>
             <field name="binding_type">report</field>
             <field name="groups_id" eval="[(4, ref('eye_addon.group_optam_store_user'))]"/>
+            <field name="paperformat_id"
+                   ref="eye_addon.optum_store_report_custom_paper_format"/>
         </record>
 
 

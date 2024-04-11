@@ -26,7 +26,26 @@
                 <xpath expr="//field[@name='state']" position="attributes">
                     <attribute name="statusbar_visible">draft,in_progress,confirm</attribute>
                 </xpath>
+
+
                 
+                <xpath expr="//page[@name='contact_lens']" position="attributes">
+                    <attribute name="groups">sltech_ophthalmology.group_ophthalmology_lab_user, eye_addon.group_optam_store_user</attribute>
+                </xpath>
+                <xpath expr="//page[@name='examination']" position="attributes">
+                    <attribute name="groups">sltech_ophthalmology.group_ophthalmology_lab_user, base.group_erp_manager, sltech_ophthalmology.group_ophthalmology_doctor</attribute>
+                </xpath>
+                <xpath expr="//page[@name='ophthalmic_history']" position="attributes">
+                    <attribute name="groups">sltech_ophthalmology.group_ophthalmology_lab_user, base.group_erp_manager</attribute>
+                </xpath>
+                <xpath expr="//page[@name='patient_complaints']" position="attributes">
+                    <attribute name="groups">sltech_ophthalmology.group_ophthalmology_lab_user, base.group_erp_manager</attribute>
+                </xpath>
+                <xpath expr="//page[@name='refraction_readings']" position="attributes">
+                    <attribute name="groups">sltech_ophthalmology.group_ophthalmology_lab_user, base.group_erp_manager</attribute>
+                </xpath>
+
+
 
                 <xpath expr="//button[@name='action_done']" position="attributes">
                     <attribute name="groups">sltech_ophthalmology.group_ophthalmology_doctor</attribute>

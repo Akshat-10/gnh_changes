@@ -11,8 +11,8 @@ class AppointmentAddon(models.Model):
         ('yob', 'Year of Birth'),
     ], string='Select')
 
-    discount_type = fields.Selection([('fixed', 'Fixed'), ('percentage', 'Percentage')], string="Discount Type", groups='base.group_erp_manager')
-    discount = fields.Float('Discount', tracking=True, groups='base.group_erp_manager')
+    # discount_type = fields.Selection([('fixed', 'Fixed'), ('percentage', 'Percentage')], string="Discount Type", groups='base.group_erp_manager')
+    # discount = fields.Float('Discount', tracking=True, groups='base.group_erp_manager')
 
     year_of_birth = fields.Char(string='Year of Birth')
     

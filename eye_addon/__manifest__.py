@@ -26,6 +26,7 @@
         'data/user_group.xml',
         'wizard/cancel_reason_view.xml',
         'reports/optum_store_prescription_report.xml',
+        'reports/reports_access.xml',
         'views/eye_addons.xml',
         'views/patient_add.xml',
         'views/appointment_addon.xml',
