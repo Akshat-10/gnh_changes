@@ -21,9 +21,9 @@
 
     # always loaded
     'data': [
+        'data/user_group.xml',
         'security/ir.model.access.csv',
         'security/rule.xml',
-        'data/user_group.xml',
         'reports/optum_store_prescription_report.xml',
         'wizard/cancel_reason_view.xml',
         # 'reports/reports_access.xml',

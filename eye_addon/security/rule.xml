@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <record id="optam_store_user_done_access_rule" model="ir.rule">
-        <field name="name">Ophthalmology Evaluations (Done)</field>
-        <field name="model_id" ref="model_acs_ophthalmology_evaluation"/>
-        <field name="domain_force">[('state', '=', 'done')]</field>
-        <field name="groups" eval="[Command.link(ref('eye_addon.group_optam_store_user'))]"/>
-    </record>
-
+    <data>
+        <record id="optam_store_user_done_access_rule" model="ir.rule">
+            <field name="name">Ophthalmology Evaluations (Done)</field>
+            <field name="model_id" ref="model_acs_ophthalmology_evaluation"/>
+            <field name="domain_force">[('state', '=', 'done')]</field>
+            <field name="groups" eval="[(4, ref('eye_addon.group_optam_store_user'))]"/>
+        </record>
+    </data>
 </odoo>

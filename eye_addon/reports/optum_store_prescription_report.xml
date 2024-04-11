@@ -5,10 +5,10 @@
             <field name="name">Optum  Store Custom Paper Format</field>
             <field name="default" eval="True"/>
             <field name="format">custom</field>
-            <field name="page_height">100</field>
-            <field name="page_width">55</field>
+            <field name="page_height">145</field>
+            <field name="page_width">75</field>
             <field name="orientation">Portrait</field>
-            <field name="margin_top">1</field>
+            <field name="margin_top">10</field>
             <field name="margin_bottom">1</field>
             <field name="margin_left">1</field>
             <field name="margin_right">1</field>
@@ -57,7 +57,8 @@
                             <div>
                                 <table style="border-collapse: collapse;
                                                 border: 2px solid black;
-                                                margin: 26px;   width: 54%;">
+                                                width: 66%;
+                                                margin-top: 41px; margin-left: 39px;">
                                     <tr>
                                         <th style="border: 2px solid black;" rowspan="2"></th>
                                         <th style="border: 2px solid black;" colspan="4">Right</th>
@@ -89,7 +90,7 @@
                             <div>
                                 <table style="border-collapse: collapse;
                                                 border: 2px solid black;
-                                                margin: 26px;   width: 54%;">
+                                                margin-top: 41px; margin-left: 39px; width: 66%;">
                                     <tr>
                                         <th style="border: 2px solid black;" rowspan="2"></th>
                                         <th style="border: 2px solid black;" colspan="4">Left</th>
@@ -136,7 +137,7 @@
             <field name="binding_type">report</field>
             <field name="paperformat_id"
                    ref="eye_addon.optum_store_report_custom_paper_format"/>
-            <field name="groups_id" eval="[(4, ref('eye_addon.group_optam_store_user'))]"/>
+            <field name="groups_id" eval="[(4, ref('eye_addon.group_optam_store_user','base.group_erp_manager'))]"/>
         </record>
 
 
