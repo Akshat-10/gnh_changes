@@ -134,9 +134,9 @@
             <field name="print_report_name">(object.name or 'Optum Store Prescription').replace('/','_')</field>
             <field name="binding_model_id" ref="acs_hms_ophthalmology.model_acs_ophthalmology_evaluation"/>
             <field name="binding_type">report</field>
-            <field name="groups_id" eval="[(4, ref('eye_addon.group_optam_store_user'))]"/>
             <field name="paperformat_id"
                    ref="eye_addon.optum_store_report_custom_paper_format"/>
+            <field name="groups_id" eval="[(4, ref('eye_addon.group_optam_store_user'))]"/>
         </record>
 
 
