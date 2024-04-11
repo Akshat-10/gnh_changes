@@ -5,8 +5,8 @@
             <field name="name">Optum  Store Custom Paper Format</field>
             <field name="default" eval="True"/>
             <field name="format">custom</field>
-            <field name="page_height">145</field>
-            <field name="page_width">75</field>
+            <field name="page_height">148</field>
+            <field name="page_width">76</field>
             <field name="orientation">Portrait</field>
             <field name="margin_top">10</field>
             <field name="margin_bottom">1</field>
@@ -21,9 +21,9 @@
                 <t t-foreach="docs" t-as="doc">
                     <div class="page">
                         <div style="width: 100%;
-                                    max-width: 353px;
+                                    max-width: 289.134px;
                                     height: 100%;
-                                    max-height: 470px;
+                                    max-height: 559.370px;
                                     margin: auto;
                                     font-family: Arial, Helvetica, sans-serif;
                                     padding: 15px;
@@ -47,7 +47,7 @@
                                 
                             </div>
                             <div style="display: flex; justify-content: space-between; line-height: 19px;" >
-                                <div style="width: 49%;">Date: <span t-field="doc.date" t-field-options='{"widget": "date"}'></span></div>
+                                <div style="width: 49%;">Date: <span t-field="doc.date" t-options='{"widget": "date"}'/></div>
                                 <div style="width: 49%;">Dr. : <span t-field="doc.physician_id.name"></span></div>
                                 
                             </div>
