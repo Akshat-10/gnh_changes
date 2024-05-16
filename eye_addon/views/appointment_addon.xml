@@ -12,7 +12,7 @@
                 </xpath> -->
 
 
-                <xpath expr="//field[@name='birthday']" position="attributes">
+                <!-- <xpath expr="//field[@name='birthday']" position="attributes">
                     <attribute name="attrs">{'invisible': [('select_option', '!=', 'dob')]}</attribute>
                 </xpath>
 
@@ -23,7 +23,7 @@
                 </xpath>
                 <xpath expr="//field[@name='follow_date']" position="after">
                     <field name="validity" readonly="1"/>
-                </xpath>
+                </xpath> -->
 
             </field>
         </record>

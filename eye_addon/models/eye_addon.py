@@ -2,25 +2,20 @@ from odoo import models, fields, api, SUPERUSER_ID
 import base64
 import os
 
-class SltechOphthalmology(models.Model):
+class TcbOphthalmology(models.Model):
     _inherit = "acs.ophthalmology.evaluation"
 
-    # eye_drawing_le_re2 = fields.Binary(string="Eye Drawing 2")
 
     image = fields.Binary(string="Image")
 
 
-
-    # state = fields.Selection(selection_replace=[('cancel', 'Cancel')])
-    READONLY_STATES = {'cancel': [('readonly', True)], 'done': [
-        ('readonly', True)]}
     
     state = fields.Selection([('draft', 'Draft'),
         ('in_progress', 'Under Evaluation'),
         ('confirm', 'Submitted'),
         ('done', 'Done'),
         ('cancel', 'Cancelled'),
-        ], 'Status', default="draft", readonly=True, states=READONLY_STATES)
+        ], 'Status', default="draft", readonly=True)
 
     def action_cancel(self):
         self.write({'state': 'cancel'})
@@ -28,11 +23,11 @@ class SltechOphthalmology(models.Model):
     
 
     def action_inprogress(self):
-        res = super(SltechOphthalmology, self).action_inprogress()
+        res = super(TcbOphthalmology, self).action_inprogress()
         self.state = 'in_progress'
 
     def submit_refractive_readings_to_doctor_optometry(self):
-        res = super(SltechOphthalmology, self).submit_refractive_readings_to_doctor_optometry()
+        res = super(TcbOphthalmology, self).submit_refractive_readings_to_doctor_optometry()
         self.state = 'confirm'
 
     def action_direct_to_doctor(self):

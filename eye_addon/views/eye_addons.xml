@@ -50,10 +50,7 @@
                 <xpath expr="//button[@name='action_done']" position="attributes">
                     <attribute name="groups">sltech_ophthalmology.group_ophthalmology_doctor</attribute>
                 </xpath>
-                <xpath expr="//div[@class='oe_title']" position="before">
-                    <!-- <field name="name" position="before"/> -->
-                    <field name="image" widget='image' class="oe_avatar"/>
-                </xpath>
+
                 <!-- <xpath expr="//form" position="attributes">
                     <attribute name="readonly">True</attribute>
                     <attribute name="attrs">{'readonly': [('state', '=', 'cancel')]}</attribute>

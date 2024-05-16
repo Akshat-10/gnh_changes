@@ -34,7 +34,7 @@
                             <div style="display: flex;justify-content: space-between;" >
                                 <div>
                                     <!-- <img src="pic1.png" alt="img" style="width: 106px; height: 52px;" /> -->
-                                    <img src="/eye_addon/static/description/gnh.png" alt="logo" style="width: 106px;height: 52px;"/>
+                                    <img src="eye_addon/static/description/gnh.png" alt=" " style="width: 106px;height: 52px;"/>
                                 </div>
                             </div>
                             <div style="border-bottom: 3px solid #000; text-align: center;">
